@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, user-scalable=1" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <title>$gatewayname</title>
+
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="splash.css" />
+
+</head>
+
+<body dir="ltr">
+    <div>
+        <div class="container">
+            <div id="header">
+                <img class='logoImage' id='companyLogo' src='images/logo.png' alt='' />
+            </div>
+            <div id="workArea">
+
+                <div id="authArea" class="groupMargin">
+
+                    <div id="loginArea">
+                        <div id="loginMessage" class="groupMargin">Sign in with your organizational account</div>
+
+                        <form method="get" id="loginForm" autocomplete="off" novalidate="novalidate"
+                            action="$authaction">
+
+                            <input type="hidden" name="tok" value="$tok">
+                            <input type="hidden" name="redir" value="$redir">
+
+                            <div id="formsAuthenticationArea">
+                                <div id="userNameArea">
+                                    <label id="userNameInputLabel" for="userNameInput" class="hidden">User
+                                        Account</label>
+                                    <input id="userNameInput" name="username" type="email" value="" tabindex="1"
+                                        class="text fullWidth" spellcheck="false"
+                                        placeholder="name.surname@company.com" autocomplete="off" />
+                                </div>
+
+                                <div id="passwordArea">
+                                    <label id="passwordInputLabel" for="passwordInput" class="hidden">Password</label>
+                                    <input id="passwordInput" name="password" type="password" tabindex="2"
+                                        class="text fullWidth" placeholder="Password" autocomplete="off" />
+                                </div>
+                                <div id="submissionArea" class="submitMargin">
+                                    <input id="submitButton" class="submit" tabindex="4" role="button" type="submit"
+                                        value="Sign in">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footerLinks">
+                <div><span id="copyright">Copyright &#169; 2023 Company</span></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

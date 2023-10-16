@@ -1,0 +1,166 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: normal;
+    font-family: "Segoe UI", "Segoe", "SegoeUI-Regular-final", Tahoma, Helvetica, Arial, sans-serif;
+    min-width: 500px;
+}
+
+body {
+    font-size: 1em;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+/* Theme layout styles */
+
+#header {
+    font-size: 2em;
+    font-weight: lighter;
+    font-family: "Segoe UI Light", "Segoe", "SegoeUI-Light-final", Tahoma, Helvetica, Arial, sans-serif;
+    padding-top: 90px;
+    min-height: 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#header img {
+    width: 60%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+#workArea {
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#workArea {
+    margin-bottom: 90px;
+}
+
+#footer {
+    height: 40px;
+    padding: 10px 50px 0px 50px;
+    position: relative;
+    color: #666666;
+    font-size: 0.78em;
+    text-align: center;
+}
+
+#footerLinks {
+    float: none;
+    padding-top: 10px;
+}
+
+#copyright {
+    color: #696969;
+}
+
+/* Common content styles */
+
+.hidden {
+    display: none;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+.submitMargin {
+    margin-top: 38px;
+    margin-bottom: 30px;
+}
+
+.topFieldMargin {
+    margin-top: 8px;
+}
+
+.fieldMargin {
+    margin-bottom: 8px;
+}
+
+.groupMargin {
+    margin-bottom: 30px;
+}
+
+.sectionMargin {
+    margin-bottom: 64px;
+}
+
+.block {
+    display: block;
+}
+
+.autoWidth {
+    width: auto;
+}
+
+.fullWidth {
+    width: 250px;
+}
+
+input {
+    max-width: 100%;
+    font-family: inherit;
+    margin-bottom: 8px;
+}
+
+span.submit,
+input[type="submit"] {
+    border: none;
+    background-color: rgb(38, 114, 236);
+    min-width: 80px;
+    width: auto;
+    height: 30px;
+    padding: 4px 20px 6px 20px;
+    border-style: solid;
+    border-width: 1px;
+    transition: background 0s;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+input[type="submit"]:hover,
+span.submit:hover {
+    background: rgb(212, 227, 251);
+}
+
+input.text {
+    height: 28px;
+    padding: 0px 3px 0px 3px;
+    border: solid 1px #BABABA;
+    font-size: 1.0em;
+}
+
+input.text:focus {
+    border: 1px solid #6B6B6B;
+}
+
+/* Form factor: intermediate height layout. Reduce space of the header. */
+@media only screen and (max-height: 820px) {
+    #header {
+        padding-top: 40px;
+        min-height: 0px;
+        overflow: hidden;
+    }
+
+    #workArea {
+        margin-bottom: 60px;
+    }
+}
