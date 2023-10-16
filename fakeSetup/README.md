@@ -1,18 +1,22 @@
 # Set up the Fake Rogue Access Point
 Steps to be run as sudo:
-1. Install dependencies and press always Yes
+1. Upgrade and update:
+```bash
+apt update && apt upgrade -y
+```
+2. Install dependencies and press always Yes
 ```bash
 apt install dnsmasq iptables-persistent nginx
 ```
-2. Stop dnsmasq:
+3. Stop dnsmasq:
 ```bash
 systemctl stop dnsmasq
 ```
-3. Move wpa_supplicant.conf to wpa_supplicat-wlan0.conf:
+4. Move wpa_supplicant.conf to wpa_supplicat-wlan0.conf:
 ```bash
 mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 ```
-4. Create /etc/wpa_supplicant/wpa_supplicant-wlan1.conf to set up the Access Point:
+5. Create /etc/wpa_supplicant/wpa_supplicant-wlan1.conf to set up the Access Point:
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -25,16 +29,16 @@ network={
     frequency=2412
 }
 ```
-5. Add the following lines at the end of /etc/dhcpcd.conf:
+6. Add the following lines at the end of /etc/dhcpcd.conf:
 ```
 interface wlan1
 static ip_address=10.64.164.1/24
 ```
-6. Enable IP forwarding:
+7. Enable IP forwarding:
 ```bash
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
-7. Add the following iptables rules:
+8. Add the following iptables rules:
 ```bash
 iptables -A INPUT -i wlan1 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -i wlan1 -p udp --dport 53 -j ACCEPT
@@ -42,7 +46,7 @@ iptables -A INPUT -i wlan1 -p udp --dport 67 -j ACCEPT
 iptables -A INPUT -i wlan1 -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -i wlan1 -j REJECT
 ```
-8. Create /etc/dnsmasq.conf:
+9. Create /etc/dnsmasq.conf:
 ```
 listen-address=10.64.164.1
 no-hosts
@@ -53,11 +57,11 @@ dhcp-option=114,http://internet4guests
 
 address=/#/10.64.164.1
 ```
-9. Add the following at the end of /etc/default/dnsmasq:
+10. Add the following at the end of /etc/default/dnsmasq:
 ```
 DNSMASQ_EXCEPT=lo
 ```
-10. Enable and Start dnsmasq:
+11. Enable and Start dnsmasq:
 ```bash
 systemctl enable dnsmasq
 systemctl start dnsmasq
