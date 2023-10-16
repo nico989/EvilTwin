@@ -1,0 +1,17 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    # Only allow GET, HEAD, POST
+    if ($request_method !~ ^(GET|HEAD|POST)$) { return 444; }
+
+    # Handle iOS
+    if ($http_user_agent ~* (CaptiveNetworkSupport) ) {
+        return 302 http://internet4guests;
+    }
+
+    location / {
+        return 302 http://internet4guests;
+    }
+}
