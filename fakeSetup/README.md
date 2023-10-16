@@ -4,7 +4,7 @@ Steps to be run as sudo:
 ```bash
 apt install dnsmasq iptables-persistent nginx
 ```
-2. stop dnsmasq:
+2. Stop dnsmasq:
 ```bash
 systemctl stop dnsmasq
 ```
