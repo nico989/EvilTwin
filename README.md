@@ -51,5 +51,6 @@ Dependencies:
 - rogueportal: https://github.com/jerryryle/rogueportal
 
 ## TODO:
-- Improve scripts quality coding a proper menù.
+- Improve scripts quality.
+- Adding a proper menù.
 - Add deauthentication/jamming attack.
